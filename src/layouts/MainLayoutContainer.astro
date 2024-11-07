@@ -7,14 +7,26 @@
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>Kiubo</title>
     <link rel="stylesheet" href="/styles/global.css" />
   </head>
-  <body style="padding-left: 16px; padding-right: 16px;">
+  <body>
     <slot name="navbar" />
-    <slot name="body" />
+    <div class="body-slot">
+      <slot name="body" />
+    </div>
     <slot name="footer" />
   </body>
 </html>
+
+<style is:global>
+  .body-slot {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+</style>

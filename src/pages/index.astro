@@ -1,5 +1,6 @@
 ---
-import Navbar from "/components/Navbar.astro";
+import Navbar from "/components/commons/Navbar.astro";
+import KiuboButton from "/components/ui/KiuboButton.astro";
 import MainLayoutContainer from "/layouts/MainLayoutContainer.astro";
 ---
 
@@ -9,6 +10,7 @@ import MainLayoutContainer from "/layouts/MainLayoutContainer.astro";
   </div>
   <div slot="body">
     <h1>This is the home page</h1>
+    <KiuboButton />
   </div>
   <div slot="footer">
     <h1>This is the footer</h1>
