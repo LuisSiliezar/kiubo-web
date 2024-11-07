@@ -1,0 +1,99 @@
+---
+
+---
+
+<nav class="flex justify-between items-center p-4">
+  <p class="text-pink-600 font-bold text-xl">
+    Kiubo
+  </p>
+  <!--Hamburger menu icon svg to trigger the slide-in menu when clicked-->
+  <div onclick="openNav()">
+    <span style="color:black; cursor:pointer;">click menu</span>
+    <svg
+      class="cursor-pointer"
+      xmlns="http://www.w3.org/2000/svg"
+      width="18.853"
+      height="12"
+      viewBox="0 0 18.853 12"
+    >
+      <g
+        id="Icon_feather-menu"
+        data-name="Icon feather-menu"
+        transform="translate(-4.5 -8)"
+      >
+        <path
+          id="Path_3"
+          data-name="Path 3"
+          d="M4.5,18H23.353"
+          transform="translate(0 -4)"
+          fill="none"
+          stroke="#fff"
+          stroke-linejoin="round"
+          stroke-width="2"></path>
+        <path
+          id="Path_4"
+          data-name="Path 4"
+          d="M4.5,9H23.353"
+          transform="translate(0)"
+          fill="none"
+          stroke="#fff"
+          stroke-linejoin="round"
+          stroke-width="2"></path>
+        <path
+          id="Path_5"
+          data-name="Path 5"
+          d="M4.5,27H23.353"
+          transform="translate(0 -8)"
+          fill="none"
+          stroke="#fff"
+          stroke-linejoin="round"
+          stroke-width="2"></path>
+      </g>
+    </svg>
+  </div>
+
+  <!--background overlay element, will close navbar when clicked-->
+  <div
+    onclick="exitNav()"
+    id="sideBar"
+    class="fixed top-0 right-0 bg-transparent w-0 h-full overflow-x-hidden duration-500 z-10"
+  >
+    <!--navigation menu box-->
+    <div
+      id="sideNav"
+      class="fixed top-0 right-0 bg-gradient-to-r bg-rose-100 text-black w-0 h-full flex justify-center items-center overflow-x-hidden duration-500 font-bold z-50"
+    >
+      <!--exit icon, will close navbar when clicked-->
+      <a
+        href="javascript:void(0)"
+        onclick="exitNav()"
+        class="text-3xl absolute top-0 right-0 mr-3 mt-2">&times;</a
+      >
+      <!--menu links-->
+      <ul class="text-2xl sm:text-3xl">
+        <li class="p-2"><a href="#">Filters</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<script is:inline>
+  const sideBar = document.getElementById("sideBar");
+  const sideNav = document.getElementById("sideNav");
+  function openNav() {
+    sideBar.style.width = "100%";
+    sideNav.style.width = "100%";
+  }
+
+  /*Close navigation*/
+  function exitNav() {
+      sideBar.style.width = "0%";
+      sideNav.style.width = "0%";
+  }
+  // const hamburger = document.getElementById("hamburger");
+  // const navLinks = document.querySelector(".nav-links");
+
+  // hamburger?.addEventListener("click", () => {
+  //   navLinks?.classList.toggle("active");
+  //   hamburger?.classList.toggle("active");
+  // });
+</script>
