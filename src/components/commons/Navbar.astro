@@ -2,7 +2,9 @@
 
 ---
 
-<nav class="flex justify-between items-center gap-3 px-4 py-4 border-b-[0.5px] border-[#E1E1E1] pb-4">
+<nav
+  class="flex justify-between items-center gap-3 px-4 py-4 border-b-[0.5px] border-[#E1E1E1] pb-4"
+>
   <p class="text-orange-600 font-bold text-xl">Kiubo</p>
   <div class="flex justify-between items-center gap-2">
     <!-- TODO: Delete Search icon -->
@@ -146,4 +148,18 @@
   </div>
 </nav>
 <!-- Scripts -->
-<script is:inline src="/utils/navbar.ts"></script>
+<script is:inline>
+  const sideBar = document.getElementById("sideBar");
+  const sideNav = document.getElementById("sideNav");
+  // open navigation bar
+  function openNav() {
+    sideBar.style.width = "100%";
+    sideNav.style.width = "100%";
+  }
+
+  // Close navigation
+  function exitNav() {
+    sideBar.style.width = "0%";
+    sideNav.style.width = "0%";
+  }
+</script>
