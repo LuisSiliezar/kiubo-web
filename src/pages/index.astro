@@ -4,44 +4,63 @@ import Navbar from "/components/commons/Navbar.astro";
 import MainLayoutContainer from "/layouts/MainLayoutContainer.astro";
 import Footer from "/components/commons/Footer.astro";
 import CategorySectionContainer from "/components/commons/CategorySectionContainer.astro";
+
+// TODO: delete this
+const categories = [
+  {
+    category: "Kiubo",
+    url: "https://images.pexels.com/photos/29139391/pexels-photo-29139391/free-photo-of-cupula-del-palacio-de-bellas-artes-en-la-ciudad-de-mexico.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+  {
+    category: "Kiubo",
+    url: "https://images.pexels.com/photos/29139391/pexels-photo-29139391/free-photo-of-cupula-del-palacio-de-bellas-artes-en-la-ciudad-de-mexico.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+  {
+    category: "Kiubo",
+    url: "https://images.pexels.com/photos/29139391/pexels-photo-29139391/free-photo-of-cupula-del-palacio-de-bellas-artes-en-la-ciudad-de-mexico.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+  {
+    category: "Kiubo",
+    url: "https://images.pexels.com/photos/29139391/pexels-photo-29139391/free-photo-of-cupula-del-palacio-de-bellas-artes-en-la-ciudad-de-mexico.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+  {
+    category: "dasl; dkasl dklassadjkl asjd askljdask ljdklsaj d",
+    url: "https://images.pexels.com/photos/29139391/pexels-photo-29139391/free-photo-of-cupula-del-palacio-de-bellas-artes-en-la-ciudad-de-mexico.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+  {
+    category: "dasdasdasjdklas jklupoi uroiqje iohqwoiejh wqio",
+    url: "https://images.pexels.com/photos/29139391/pexels-photo-29139391/free-photo-of-cupula-del-palacio-de-bellas-artes-en-la-ciudad-de-mexico.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+  {
+    category: "dashdkajskdl jasldj askldjas lkdjaslkd jas",
+    url: "https://images.pexels.com/photos/29127727/pexels-photo-29127727.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+  {
+    category: "d hajkshdasklh dlakshjdkajs hdasjkhdasldhaslkdj shdajskhdjkas dhaskl",
+    url: "https://images.pexels.com/photos/29127727/pexels-photo-29127727.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+];
 ---
 
 <MainLayoutContainer>
   <div slot="navbar">
     <Navbar />
   </div>
-  <div slot="body" class="flex-1">
+  <div slot="body" class="">
     <HorizontalScrollContainer title="This is the body">
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
+      {categories.map((category) => {
+		return <CategorySectionContainer {...category} />;
+	  })}
     </HorizontalScrollContainer>
     <HorizontalScrollContainer title="This is the body">
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
-      <CategorySectionContainer />
+      {categories.map((category) => {
+		return <CategorySectionContainer {...category} />;
+	  })}
+    </HorizontalScrollContainer>
+    <HorizontalScrollContainer title="This is the body">
+      {categories.map((category) => {
+		return <CategorySectionContainer {...category} />;
+	  })}
     </HorizontalScrollContainer>
   </div>
   <div slot="footer">

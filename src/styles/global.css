@@ -43,3 +43,11 @@ footer {
   border-radius: 16px;
   border: 3px solid #ffffff;
 }
+
+/* custom style */
+
+.category-title {
+  font-size: 1.25rem;
+  text-align: start;
+  font-weight: 600;
+}
