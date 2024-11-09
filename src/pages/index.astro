@@ -1,18 +1,50 @@
 ---
+import HorizontalScrollContainer from "/components/commons/HorizontalScrollContainer.astro";
 import Navbar from "/components/commons/Navbar.astro";
-import KiuboButton from "/components/ui/KiuboButton.astro";
 import MainLayoutContainer from "/layouts/MainLayoutContainer.astro";
+import Footer from "/components/commons/Footer.astro";
+import CategorySectionContainer from "/components/commons/CategorySectionContainer.astro";
 ---
 
 <MainLayoutContainer>
   <div slot="navbar">
     <Navbar />
   </div>
-  <div slot="body">
-    <h1>This is the home page</h1>
-    <KiuboButton />
+  <div slot="body" class="flex-1">
+    <HorizontalScrollContainer title="This is the body">
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+    </HorizontalScrollContainer>
+    <HorizontalScrollContainer title="This is the body">
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+      <CategorySectionContainer />
+    </HorizontalScrollContainer>
   </div>
   <div slot="footer">
-    <h1>This is the footer</h1>
+    <Footer />
   </div>
 </MainLayoutContainer>

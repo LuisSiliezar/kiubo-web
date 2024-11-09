@@ -12,3 +12,35 @@ h1 {
   font-size: 2.5rem;
   text-align: center;
 }
+
+/* footer */
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Scrollbar */
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #d4d4d4 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #d4d4d4;
+  border-radius: 16px;
+  border: 3px solid #ffffff;
+}
