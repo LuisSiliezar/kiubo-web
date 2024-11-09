@@ -1,6 +1,7 @@
 ---
 import "/styles/global.css";
 ---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -15,9 +16,7 @@ import "/styles/global.css";
   </head>
   <body>
     <slot name="navbar" />
-    <div class="body-slot">
-      <slot name="body" />
-    </div>
+    <slot name="body" />
     <slot name="footer" />
   </body>
 </html>
