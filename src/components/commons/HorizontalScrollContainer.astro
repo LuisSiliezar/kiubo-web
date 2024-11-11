@@ -2,8 +2,8 @@
 const { title } = Astro.props;
 ---
 
-<div style="padding:16px">
-  <h2 class="category-title">{title}</h2>
+<div class="block">
+  <h2 class="category-title pl-6">{title}</h2>
   <div class="horizontal-scroll-container">
     <slot />
   </div>
@@ -14,8 +14,8 @@ const { title } = Astro.props;
     display: flex;
     overflow-x: auto;
     white-space: nowrap;
-    gap: 16px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    gap: 1.6vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
   }
 </style>

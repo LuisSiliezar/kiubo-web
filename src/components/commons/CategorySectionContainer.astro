@@ -1,11 +1,17 @@
 ---
 import { Image } from "astro:assets";
 
-const { category, url } = Astro.props;
+interface Props {
+  category: string;
+  url: string;
+  isFirst?: boolean;
+  isLast?: boolean;
+}
+const { category, url, isFirst = false, isLast = false }: Props = Astro.props;
 ---
 
-<div class="block">
-  <div class="image-styles">
+<div class:list={["block", { "pl-6": isFirst }, { "pr-6": isLast }]}>
+  <div class={"image-properties"}>
     <Image
       src={url}
       alt="kiubo logo"
@@ -17,7 +23,7 @@ const { category, url } = Astro.props;
       class="object-cover rounded-xl h-full w-full"
     />
   </div>
-  <div style="height:50px; padding-top: 6px;">
+  <div class="category-properties">
     <span class="category-info">
       {category}
     </span>
@@ -25,10 +31,15 @@ const { category, url } = Astro.props;
 </div>
 
 <style>
-  .image-styles {
-    width: 250px;
+  .image-properties {
+    width: 25vh;
+    height: 30vh;
   }
-  
+
+  .category-properties {
+    height: 5vh;
+    padding-top: 0.6vh;
+  }
   .category-info {
     font-size: 0.875rem;
     font-weight: 600;

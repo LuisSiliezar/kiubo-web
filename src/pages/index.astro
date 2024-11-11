@@ -8,35 +8,32 @@ import CategorySectionContainer from "/components/commons/CategorySectionContain
 // TODO: delete this
 const categories = [
   {
-    category: "Kiubo",
-    url: "https://images.pexels.com/photos/29139391/pexels-photo-29139391/free-photo-of-cupula-del-palacio-de-bellas-artes-en-la-ciudad-de-mexico.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    category: "Zapatos formales de mujer",
+    url: "https://images.pexels.com/photos/27100516/pexels-photo-27100516/free-photo-of-moda-mujer-piernas-patas.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
-    category: "Kiubo",
-    url: "https://images.pexels.com/photos/29139391/pexels-photo-29139391/free-photo-of-cupula-del-palacio-de-bellas-artes-en-la-ciudad-de-mexico.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    category: "Zapatos casuales de hombre",
+    url: "https://images.pexels.com/photos/26852499/pexels-photo-26852499/free-photo-of-mujer-sentado-tejanos-pantalones-tejanos.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
-    category: "Kiubo",
-    url: "https://images.pexels.com/photos/29139391/pexels-photo-29139391/free-photo-of-cupula-del-palacio-de-bellas-artes-en-la-ciudad-de-mexico.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    category: "Ropa de playa",
+    url: "https://images.pexels.com/photos/29342163/pexels-photo-29342163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
-    category: "Kiubo",
-    url: "https://images.pexels.com/photos/29139391/pexels-photo-29139391/free-photo-of-cupula-del-palacio-de-bellas-artes-en-la-ciudad-de-mexico.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    category: "Camisetas polo de hombre",
+    url: "https://images.pexels.com/photos/29333056/pexels-photo-29333056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
-    category: "dasl; dkasl dklassadjkl asjd askljdask ljdklsaj d",
-    url: "https://images.pexels.com/photos/29139391/pexels-photo-29139391/free-photo-of-cupula-del-palacio-de-bellas-artes-en-la-ciudad-de-mexico.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    category: "Accessorios para celular",
+    url: "https://images.pexels.com/photos/1398339/pexels-photo-1398339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
-    category: "dasdasdasjdklas jklupoi uroiqje iohqwoiejh wqio",
-    url: "https://images.pexels.com/photos/29139391/pexels-photo-29139391/free-photo-of-cupula-del-palacio-de-bellas-artes-en-la-ciudad-de-mexico.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    category: "Ropa deportiva de mujer",
+    url: "https://images.pexels.com/photos/28061/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
-    category: "dashdkajskdl jasldj askldjas lkdjaslkd jas",
-    url: "https://images.pexels.com/photos/29127727/pexels-photo-29127727.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-  },
-  {
-    category: "d hajkshdasklh dlakshjdkajs hdasjkhdasldhaslkdj shdajskhdjkas dhaskl",
+    category:
+      "Accesorios para mascotas que se encuentran en el una tienda de mascotas",
     url: "https://images.pexels.com/photos/29127727/pexels-photo-29127727.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
 ];
@@ -46,21 +43,45 @@ const categories = [
   <div slot="navbar">
     <Navbar />
   </div>
-  <div slot="body" class="">
-    <HorizontalScrollContainer title="This is the body">
-      {categories.map((category) => {
-		return <CategorySectionContainer {...category} />;
-	  })}
+  <div slot="body">
+    <HorizontalScrollContainer title="Categorias">
+      {
+        categories.map((category, index) => {
+          return (
+            <CategorySectionContainer
+              {...category}
+              isFirst={index === 0}
+              isLast={index === categories.length - 1}
+            />
+          );
+        })
+      }
     </HorizontalScrollContainer>
-    <HorizontalScrollContainer title="This is the body">
-      {categories.map((category) => {
-		return <CategorySectionContainer {...category} />;
-	  })}
+    <HorizontalScrollContainer title="Categorias">
+      {
+        categories.map((category, index) => {
+          return (
+            <CategorySectionContainer
+              {...category}
+              isFirst={index === 0}
+              isLast={index === categories.length - 1}
+            />
+          );
+        })
+      }
     </HorizontalScrollContainer>
-    <HorizontalScrollContainer title="This is the body">
-      {categories.map((category) => {
-		return <CategorySectionContainer {...category} />;
-	  })}
+    <HorizontalScrollContainer title="Categorias">
+      {
+        categories.map((category, index) => {
+          return (
+            <CategorySectionContainer
+              {...category}
+              isFirst={index === 0}
+              isLast={index === categories.length - 1}
+            />
+          );
+        })
+      }
     </HorizontalScrollContainer>
   </div>
   <div slot="footer">
