@@ -10,7 +10,7 @@ interface Props {
 const { category, url, isFirst = false, isLast = false }: Props = Astro.props;
 ---
 
-<div class:list={["block", { "pl-6": isFirst }, { "pr-6": isLast }]}>
+<div class:list={["block", { "pl-4": isFirst }, { "pr-4": isLast }]}>
   <div class={"image-properties"}>
     <Image
       src={url}
