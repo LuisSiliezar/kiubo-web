@@ -1,9 +1,12 @@
 ---
+import { Image } from "astro:assets";
 import HorizontalScrollContainer from "/components/commons/HorizontalScrollContainer.astro";
 import Navbar from "/components/commons/Navbar.astro";
 import MainLayoutContainer from "/layouts/MainLayoutContainer.astro";
 import Footer from "/components/commons/Footer.astro";
 import CategorySectionContainer from "/components/commons/CategorySectionContainer.astro";
+import PreviewProductItem from "/components/products/PreviewProductItem.astro";
+import KiuboButton from "/components/ui/KiuboButton.astro";
 
 // TODO: delete this
 const categories = [
@@ -37,6 +40,38 @@ const categories = [
     url: "https://images.pexels.com/photos/29127727/pexels-photo-29127727.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
 ];
+
+// TODO: delete this
+const products = [
+  {
+    category: "Zapatos casuales de mujer",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3bbecbdf584e40398446a8bf0117cf62_9366/Samba_OG_Shoes_White_B75806_01_00_standard.jpg",
+  },
+  {
+    category: "Zapatos casuales de hombre",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/94ddbca2c2034277b6bbb9b1d5fa04ce_9366/Samba_OG_Shoes_Brown_IE6523_02_standard_hover.jpg",
+  },
+  {
+    category: "Zapatos deportivos para hombre",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f39b8a8d62f1477ab95c134871390023_9366/ULTRABOOST_1.0_SHOES_Black_JH6583_01_standard.jpg",
+  },
+  {
+    category: "70s Short Full Zip Fleece Hoodie",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4d0801fc7b2640fba5aeefcfa4a5f403_9366/70s_Short_Full_Zip_Fleece_Hoodie_Pink_JN7665_21_model.jpg",
+  },
+  {
+    category: "Electric Zubaz American Football Cleats",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/05bf6643752f40db8d39ce42e3d43b25_9366/Adizero_Electric_Zubaz_American_Football_Cleats_Black_IF3994_01_standard.jpg",
+  },
+  {
+    category: "Steel Metal Bottle 2L",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/82eca63dacbe406e8f19ad98001381e8_9366/Steel_Metal_Bottle_2L_White_EX7305_01_standard.jpg",
+  },
+  {
+    category: "Football Jersey",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/019865e338ec43038b52dd807cdd91cc_9366/Miami_Football_Jersey_White_JJ0410_23_hover_model.jpg",
+  },
+];
 ---
 
 <MainLayoutContainer>
@@ -44,6 +79,21 @@ const categories = [
     <Navbar />
   </div>
   <div slot="body">
+    <div style="height: 500px">
+      <Image
+        src={"https://shop.mango.com/cms-assets/v3/assets/blt351b9b24ac05a648/blt3549b769b48267db/672b56b4869e469c9c881830/Veterans_Man_4096x1756.jpg?imdensity=1&im=RegionOfInterestCrop,width=2048,height=878,regionOfInterest=(2048,878)"}
+        alt="kiubo logo"
+        format="avif"
+        width="1500"
+        height="1500"
+        decoding="async"
+        loading="lazy"
+        class="object-cover rounded-none h-full w-full pb-6"
+      />
+      <div class="absolute top-50 left-50 mt-[-100px] ml-4">
+        <KiuboButton />
+      </div>
+    </div>
     <HorizontalScrollContainer title="Categorias">
       {
         categories.map((category, index) => {
@@ -57,24 +107,11 @@ const categories = [
         })
       }
     </HorizontalScrollContainer>
-    <HorizontalScrollContainer title="Categorias">
+    <HorizontalScrollContainer title="Tendencias">
       {
-        categories.map((category, index) => {
+        products.map((category, index) => {
           return (
-            <CategorySectionContainer
-              {...category}
-              isFirst={index === 0}
-              isLast={index === categories.length - 1}
-            />
-          );
-        })
-      }
-    </HorizontalScrollContainer>
-    <HorizontalScrollContainer title="Categorias">
-      {
-        categories.map((category, index) => {
-          return (
-            <CategorySectionContainer
+            <PreviewProductItem
               {...category}
               isFirst={index === 0}
               isLast={index === categories.length - 1}
@@ -84,7 +121,34 @@ const categories = [
       }
     </HorizontalScrollContainer>
   </div>
-  <div slot="footer">
-    <Footer />
-  </div>
+  <HorizontalScrollContainer title="Tendencias">
+    {
+      products.map((category, index) => {
+        return (
+          <PreviewProductItem
+            {...category}
+            isFirst={index === 0}
+            isLast={index === categories.length - 1}
+          />
+        );
+      })
+    }
+  </HorizontalScrollContainer>
 </MainLayoutContainer>
+<HorizontalScrollContainer title="Tendencias">
+  {
+    products.map((category, index) => {
+      return (
+        <PreviewProductItem
+          {...category}
+          isFirst={index === 0}
+          isLast={index === categories.length - 1}
+        />
+      );
+    })
+  }
+</HorizontalScrollContainer>
+
+<div slot="footer">
+  <Footer />
+</div>
