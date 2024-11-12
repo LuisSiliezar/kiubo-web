@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  category: string;
+  url: string;
+  isFirst?: boolean;
+  isLast?: boolean;
+}
+const { category, url, isFirst = false, isLast = false }: Props = Astro.props;
+---
+
+<div class:list={["block h-72", { "pl-4": isFirst }, { "pr-4": isLast }]}>
+  <div class="image-properties">
+    <Image
+      src={url}
+      alt="kiubo logo"
+      format="avif"
+      width="1500"
+      height="1500"
+      decoding="async"
+      loading="lazy"
+      class="object-cover rounded-none h-full w-full"
+    />
+  </div>
+  <div class="product-container">
+    <span class="product-title">
+      {category}
+    </span>
+  </div>
+  <div class="product-variations">122 colores disponibles</div>
+  <div class="price">$2,000,000</div>
+  <div class="discount">$1,000,000</div>
+</div>
+
+<style>
+  .image-properties {
+    width: 150px;
+    height: 150px;
+  }
+
+  .product-container {
+    height: 50px;
+    padding-top: 6px;
+  }
+
+  .product-title {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: black;
+    text-wrap: wrap;
+    line-height: 1.5;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    max-width: 150px;
+  }
+
+  .product-variations {
+    color: #707072;
+    font-size: 0.875rem;
+    font-weight: 400;
+    text-wrap: wrap;
+    line-height: 1.5;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    max-width: 150px;
+  }
+
+  .price {
+    color: black;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-wrap: wrap;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    /* max-width: 50px; */
+  }
+
+  .discount {
+    color: #707072;
+    font-size: 0.875rem;
+    font-weight: 400;
+    text-wrap: wrap;
+    line-height: 1.5;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    text-decoration: line-through;
+  }
+</style>
