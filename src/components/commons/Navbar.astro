@@ -1,0 +1,242 @@
+---
+import routes from "/utils/routes.json";
+console.log(routes);
+---
+
+<nav
+  class="flex justify-between items-center gap-3 px-4 py-4 border-b-[0.5px] border-[#E1E1E1] pb-3"
+>
+  <!-- TODO: Delete Menu icon -->
+  <div class="flex">
+    <span onclick="openMenuNav()" class="cursor-pointer pr-1">
+      <svg
+        width="30"
+        height="30"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <mask
+          id="mask0_1_1019"
+          style="mask-type:alpha"
+          maskUnits="userSpaceOnUse"
+          x="4"
+          y="4"
+          width="24"
+          height="24"
+        >
+          <rect x="4" y="4" width="24" height="24" fill="#D9D9D9"></rect>
+        </mask>
+        <g mask="url(#mask0_1_1019)">
+          <path
+            d="M8 22C7.71667 22 7.47917 21.9042 7.2875 21.7125C7.09583 21.5208 7 21.2833 7 21C7 20.7167 7.09583 20.4792 7.2875 20.2875C7.47917 20.0958 7.71667 20 8 20H24C24.2833 20 24.5208 20.0958 24.7125 20.2875C24.9042 20.4792 25 20.7167 25 21C25 21.2833 24.9042 21.5208 24.7125 21.7125C24.5208 21.9042 24.2833 22 24 22H8ZM8 17C7.71667 17 7.47917 16.9042 7.2875 16.7125C7.09583 16.5208 7 16.2833 7 16C7 15.7167 7.09583 15.4792 7.2875 15.2875C7.47917 15.0958 7.71667 15 8 15H24C24.2833 15 24.5208 15.0958 24.7125 15.2875C24.9042 15.4792 25 15.7167 25 16C25 16.2833 24.9042 16.5208 24.7125 16.7125C24.5208 16.9042 24.2833 17 24 17H8ZM8 12C7.71667 12 7.47917 11.9042 7.2875 11.7125C7.09583 11.5208 7 11.2833 7 11C7 10.7167 7.09583 10.4792 7.2875 10.2875C7.47917 10.0958 7.71667 10 8 10H24C24.2833 10 24.5208 10.0958 24.7125 10.2875C24.9042 10.4792 25 10.7167 25 11C25 11.2833 24.9042 11.5208 24.7125 11.7125C24.5208 11.9042 24.2833 12 24 12H8Z"
+            fill="#1C1B1F"></path>
+        </g>
+      </svg>
+    </span>
+    <a href={routes.home} class="text-orange-600 font-bold text-xl">Kiubo</a>
+  </div>
+  <div class="flex justify-between items-center gap-2">
+    <!-- TODO: Delete Heart icon -->
+    <span>
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <mask
+          id="mask0_1_1011"
+          style="mask-type:alpha"
+          maskUnits="userSpaceOnUse"
+          x="4"
+          y="4"
+          width="24"
+          height="24"
+        >
+          <rect x="4" y="4" width="24" height="24" fill="#D9D9D9"></rect>
+        </mask>
+        <g mask="url(#mask0_1_1011)">
+          <path
+            d="M16 24.325C15.7667 24.325 15.5292 24.2834 15.2875 24.2C15.0458 24.1167 14.8333 23.9834 14.65 23.8L12.925 22.225C11.1583 20.6084 9.5625 19.0042 8.1375 17.4125C6.7125 15.8209 6 14.0667 6 12.15C6 10.5834 6.525 9.27502 7.575 8.22502C8.625 7.17502 9.93333 6.65002 11.5 6.65002C12.3833 6.65002 13.2167 6.83752 14 7.21252C14.7833 7.58752 15.45 8.10002 16 8.75002C16.55 8.10002 17.2167 7.58752 18 7.21252C18.7833 6.83752 19.6167 6.65002 20.5 6.65002C22.0667 6.65002 23.375 7.17502 24.425 8.22502C25.475 9.27502 26 10.5834 26 12.15C26 14.0667 25.2917 15.825 23.875 17.425C22.4583 19.025 20.85 20.6334 19.05 22.25L17.35 23.8C17.1667 23.9834 16.9542 24.1167 16.7125 24.2C16.4708 24.2834 16.2333 24.325 16 24.325ZM15.05 10.75C14.5667 10.0667 14.05 9.54586 13.5 9.18752C12.95 8.82919 12.2833 8.65002 11.5 8.65002C10.5 8.65002 9.66667 8.98336 9 9.65002C8.33333 10.3167 8 11.15 8 12.15C8 13.0167 8.30833 13.9375 8.925 14.9125C9.54167 15.8875 10.2792 16.8334 11.1375 17.75C11.9958 18.6667 12.8792 19.525 13.7875 20.325C14.6958 21.125 15.4333 21.7834 16 22.3C16.5667 21.7834 17.3042 21.125 18.2125 20.325C19.1208 19.525 20.0042 18.6667 20.8625 17.75C21.7208 16.8334 22.4583 15.8875 23.075 14.9125C23.6917 13.9375 24 13.0167 24 12.15C24 11.15 23.6667 10.3167 23 9.65002C22.3333 8.98336 21.5 8.65002 20.5 8.65002C19.7167 8.65002 19.05 8.82919 18.5 9.18752C17.95 9.54586 17.4333 10.0667 16.95 10.75C16.8333 10.9167 16.6917 11.0417 16.525 11.125C16.3583 11.2084 16.1833 11.25 16 11.25C15.8167 11.25 15.6417 11.2084 15.475 11.125C15.3083 11.0417 15.1667 10.9167 15.05 10.75Z"
+            fill="#1C1B1F"></path>
+        </g>
+      </svg>
+    </span>
+    <!-- TODO: Delete Cart icon -->
+    <a href={routes.cart} class="cursor-pointer">
+      <span>
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <mask
+            id="mask0_1_1015"
+            style="mask-type:alpha"
+            maskUnits="userSpaceOnUse"
+            x="4"
+            y="4"
+            width="24"
+            height="24"
+          >
+            <rect x="4" y="4" width="24" height="24" fill="#D9D9D9"></rect>
+          </mask>
+          <g mask="url(#mask0_1_1015)">
+            <path
+              d="M11 26C10.45 26 9.97917 25.8042 9.5875 25.4125C9.19583 25.0208 9 24.55 9 24C9 23.45 9.19583 22.9792 9.5875 22.5875C9.97917 22.1958 10.45 22 11 22C11.55 22 12.0208 22.1958 12.4125 22.5875C12.8042 22.9792 13 23.45 13 24C13 24.55 12.8042 25.0208 12.4125 25.4125C12.0208 25.8042 11.55 26 11 26ZM21 26C20.45 26 19.9792 25.8042 19.5875 25.4125C19.1958 25.0208 19 24.55 19 24C19 23.45 19.1958 22.9792 19.5875 22.5875C19.9792 22.1958 20.45 22 21 22C21.55 22 22.0208 22.1958 22.4125 22.5875C22.8042 22.9792 23 23.45 23 24C23 24.55 22.8042 25.0208 22.4125 25.4125C22.0208 25.8042 21.55 26 21 26ZM10.15 10L12.55 15H19.55L22.3 10H10.15ZM9.2 8H23.95C24.3333 8 24.625 8.17083 24.825 8.5125C25.025 8.85417 25.0333 9.2 24.85 9.55L21.3 15.95C21.1167 16.2833 20.8708 16.5417 20.5625 16.725C20.2542 16.9083 19.9167 17 19.55 17H12.1L11 19H22C22.2833 19 22.5208 19.0958 22.7125 19.2875C22.9042 19.4792 23 19.7167 23 20C23 20.2833 22.9042 20.5208 22.7125 20.7125C22.5208 20.9042 22.2833 21 22 21H11C10.25 21 9.68333 20.6708 9.3 20.0125C8.91667 19.3542 8.9 18.7 9.25 18.05L10.6 15.6L7 8H6C5.71667 8 5.47917 7.90417 5.2875 7.7125C5.09583 7.52083 5 7.28333 5 7C5 6.71667 5.09583 6.47917 5.2875 6.2875C5.47917 6.09583 5.71667 6 6 6H7.625C7.80833 6 7.98333 6.05 8.15 6.15C8.31667 6.25 8.44167 6.39167 8.525 6.575L9.2 8Z"
+              fill="#1C1B1F"></path>
+          </g>
+        </svg>
+      </span>
+    </a>
+    <!-- TODO: Delete Search icon -->
+    <span onclick="openSearchNav()" class="cursor-pointer">
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <mask
+          id="mask0_1_1007"
+          style="mask-type:alpha"
+          maskUnits="userSpaceOnUse"
+          x="4"
+          y="4"
+          width="24"
+          height="24"
+        >
+          <rect x="4" y="4" width="24" height="24" fill="#D9D9D9"></rect>
+        </mask>
+        <g mask="url(#mask0_1_1007)">
+          <path
+            d="M13.5 20C11.6833 20 10.1458 19.3708 8.8875 18.1125C7.62917 16.8542 7 15.3167 7 13.5C7 11.6833 7.62917 10.1458 8.8875 8.8875C10.1458 7.62917 11.6833 7 13.5 7C15.3167 7 16.8542 7.62917 18.1125 8.8875C19.3708 10.1458 20 11.6833 20 13.5C20 14.2333 19.8833 14.925 19.65 15.575C19.4167 16.225 19.1 16.8 18.7 17.3L24.3 22.9C24.4833 23.0833 24.575 23.3167 24.575 23.6C24.575 23.8833 24.4833 24.1167 24.3 24.3C24.1167 24.4833 23.8833 24.575 23.6 24.575C23.3167 24.575 23.0833 24.4833 22.9 24.3L17.3 18.7C16.8 19.1 16.225 19.4167 15.575 19.65C14.925 19.8833 14.2333 20 13.5 20ZM13.5 18C14.75 18 15.8125 17.5625 16.6875 16.6875C17.5625 15.8125 18 14.75 18 13.5C18 12.25 17.5625 11.1875 16.6875 10.3125C15.8125 9.4375 14.75 9 13.5 9C12.25 9 11.1875 9.4375 10.3125 10.3125C9.4375 11.1875 9 12.25 9 13.5C9 14.75 9.4375 15.8125 10.3125 16.6875C11.1875 17.5625 12.25 18 13.5 18Z"
+            fill="#1C1B1F"></path>
+        </g>
+      </svg>
+    </span>
+  </div>
+  <!-- !SEARCH SIDEBAR -->
+  <div
+    id="sideSearchBar"
+    class="fixed top-0 right-0 bg-white w-0 h-full overflow-x-hidden duration-500 z-10"
+  >
+    <div
+      id="sideSearchNav"
+      class="fixed top-0 right-0 text-black w-0 h-full justify-center items-center overflow-x-hidden duration-500 font-bold z-50"
+    >
+      <!-- TODO: Delete menu icon -->
+      <div class="flex justify-between items-center pt-4">
+        <span class="text-black ml-2" onclick="exitSearchNav()">
+          <!---! detele icon ---->
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <mask
+              id="mask0_1_1937"
+              style="mask-type:alpha"
+              maskUnits="userSpaceOnUse"
+              x="4"
+              y="4"
+              width="24"
+              height="24"
+            >
+              <rect x="4" y="4" width="24" height="24" fill="#D9D9D9"></rect>
+            </mask>
+            <g mask="url(#mask0_1_1937)">
+              <path
+                d="M13.55 16L20.9 23.35C21.15 23.6 21.2708 23.8917 21.2625 24.225C21.2542 24.5583 21.125 24.85 20.875 25.1C20.625 25.35 20.3333 25.475 20 25.475C19.6667 25.475 19.375 25.35 19.125 25.1L11.425 17.425C11.225 17.225 11.075 17 10.975 16.75C10.875 16.5 10.825 16.25 10.825 16C10.825 15.75 10.875 15.5 10.975 15.25C11.075 15 11.225 14.775 11.425 14.575L19.125 6.87499C19.375 6.62499 19.6708 6.50415 20.0125 6.51249C20.3542 6.52082 20.65 6.64999 20.9 6.89999C21.15 7.14999 21.275 7.44165 21.275 7.77499C21.275 8.10832 21.15 8.39999 20.9 8.64999L13.55 16Z"
+                fill="#1C1B1F"></path>
+            </g>
+          </svg>
+        </span>
+        <input
+          type="search"
+          id="default-search"
+          class="block w-full mx-4 p-3 ps-5 text-sm text-gray-900 font-light border-gray-300 rounded-full bg-gray-200"
+          placeholder="Buscar..."
+          required
+        />
+      </div>
+      <div class="mt-6 px-4">
+        <!--menu links-->
+        <ul class="text-lgf font-normal">
+          <li class="p-2"><a href="#">Option 1</a></li>
+          <li class="p-2"><a href="#">Option 2</a></li>
+          <li class="p-2"><a href="#">Option 3</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- !MENU SIDEBAR -->
+  <div
+    onclick="exitMenuNav()"
+    id="sideMenuBar"
+    class="fixed top-0 left-0 bg-transparent w-0 h-full overflow-x-hidden duration-500 z-10"
+  >
+    <span style="color:black; cursor:pointer;">click menu</span>
+    <div
+      id="sideMenuNav"
+      class="fixed top-0 left-0 bg-white text-black w-0 h-full flex justify-center items-center overflow-x-hidden duration-500 font-bold z-50"
+    >
+      <!-- TODO: Delete menu icon -->
+      <span class="flex justify-between items-center" onclick="exitMenuNav()">
+        <a
+          href="javascript:void(0)"
+          class="text-sm absolute top-0 right-0 mr-3 mt-2"
+          ><div>
+            <span>close</span>
+            <span class="text-white">x</span>
+          </div></a
+        >
+      </span>
+
+      <!--menu links-->
+      <ul class="text-2xl">
+        <li class="p-2"><a href="#">House options</a></li>
+        <li class="p-2"><a href="#">Information</a></li>
+        <li class="p-2"><a href="#">Settings</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Scripts -->
+<script is:inline>
+  const sideSearchBar = document.getElementById("sideSearchBar");
+  const sideSearchNav = document.getElementById("sideSearchNav");
+  const sideMenuBar = document.getElementById("sideMenuBar");
+  const sideMenuNav = document.getElementById("sideMenuNav");
+
+  // open navigation bar
+  function openSearchNav() {
+    sideSearchBar.style.width = "100%";
+    sideSearchNav.style.width = "100%";
+  }
+
+  // Close navigation
+  function exitSearchNav() {
+    sideSearchBar.style.width = "0%";
+    sideSearchNav.style.width = "0%";
+  }
+
+  // open navigation bar
+  function openMenuNav() {
+    sideMenuBar.style.width = "100%";
+    sideMenuNav.style.width = "100%";
+  }
+
+  // Close navigation
+  function exitMenuNav() {
+    sideMenuBar.style.width = "0%";
+    sideMenuNav.style.width = "0%";
+  }
+</script>

@@ -1,0 +1,47 @@
+html {
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* footer */
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* Scrollbar */
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #d4d4d4 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #d4d4d4;
+  border-radius: 16px;
+  border: 3px solid #ffffff;
+}
+
+/* custom style */
+
+.category-title {
+  font-size: 1.25rem;
+  text-align: start;
+  font-weight: 600;
+}

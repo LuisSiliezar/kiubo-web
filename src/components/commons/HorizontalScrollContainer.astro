@@ -1,0 +1,23 @@
+---
+const { title, addTitleSpacing = false }: any = Astro.props;
+---
+
+<div class="block">
+  <h2 class:list={["category-title", { "pl-4": addTitleSpacing }]}>
+    {title}
+  </h2>
+  <div class="horizontal-scroll-container">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .horizontal-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 1.6vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+</style>
