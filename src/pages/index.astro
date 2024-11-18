@@ -3,7 +3,6 @@ import { Image } from "astro:assets";
 import HorizontalScrollContainer from "/components/commons/HorizontalScrollContainer.astro";
 import Navbar from "/components/commons/Navbar.astro";
 import MainLayoutContainer from "/layouts/MainLayoutContainer.astro";
-import Footer from "/components/commons/Footer.astro";
 import CategorySectionContainer from "/components/commons/CategorySectionContainer.astro";
 import PreviewProductItem from "/components/products/PreviewProductItem.astro";
 import KiuboButton from "/components/ui/KiuboButton.astro";
@@ -71,57 +70,81 @@ const products = [
     category: "Football Jersey",
     url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/019865e338ec43038b52dd807cdd91cc_9366/Miami_Football_Jersey_White_JJ0410_23_hover_model.jpg",
   },
+  {
+    category: "70s Short Full Zip Fleece Hoodie",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4d0801fc7b2640fba5aeefcfa4a5f403_9366/70s_Short_Full_Zip_Fleece_Hoodie_Pink_JN7665_21_model.jpg",
+  },
+  {
+    category: "Electric Zubaz American Football Cleats",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/05bf6643752f40db8d39ce42e3d43b25_9366/Adizero_Electric_Zubaz_American_Football_Cleats_Black_IF3994_01_standard.jpg",
+  },
+  {
+    category: "Steel Metal Bottle 2L",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/82eca63dacbe406e8f19ad98001381e8_9366/Steel_Metal_Bottle_2L_White_EX7305_01_standard.jpg",
+  },
+  {
+    category: "Football Jersey",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/019865e338ec43038b52dd807cdd91cc_9366/Miami_Football_Jersey_White_JJ0410_23_hover_model.jpg",
+  },
 ];
 ---
 
 <MainLayoutContainer>
-  <div slot="navbar">
-    <Navbar />
-  </div>
-  <div slot="body">
-    <div style="height: 500px">
-      <Image
-        src={"https://shop.mango.com/cms-assets/v3/assets/blt351b9b24ac05a648/blt3549b769b48267db/672b56b4869e469c9c881830/Veterans_Man_4096x1756.jpg?imdensity=1&im=RegionOfInterestCrop,width=2048,height=878,regionOfInterest=(2048,878)"}
-        alt="kiubo logo"
-        format="avif"
-        width="1500"
-        height="1500"
-        decoding="async"
-        loading="lazy"
-        class="object-cover rounded-none h-full w-full pb-6"
-      />
-      <div class="absolute top-50 left-50 mt-[-100px] ml-4">
-        <KiuboButton />
-      </div>
+  <div style="height: 500px">
+    <Image
+      src={"https://shop.mango.com/cms-assets/v3/assets/blt351b9b24ac05a648/blt3549b769b48267db/672b56b4869e469c9c881830/Veterans_Man_4096x1756.jpg?imdensity=1&im=RegionOfInterestCrop,width=2048,height=878,regionOfInterest=(2048,878)"}
+      alt="kiubo logo"
+      format="avif"
+      width="1500"
+      height="1500"
+      decoding="async"
+      loading="lazy"
+      class="object-cover rounded-none h-full w-full pb-6"
+    />
+    <div class="absolute top-50 left-50 mt-[-100px] ml-4">
+      <KiuboButton />
     </div>
-    <HorizontalScrollContainer title="Categorias">
-      {
-        categories.map((category, index) => {
-          return (
-            <CategorySectionContainer
-              {...category}
-              isFirst={index === 0}
-              isLast={index === categories.length - 1}
-            />
-          );
-        })
-      }
-    </HorizontalScrollContainer>
-    <HorizontalScrollContainer title="Tendencias">
-      {
-        products.map((category, index) => {
-          return (
-            <PreviewProductItem
-              {...category}
-              isFirst={index === 0}
-              isLast={index === categories.length - 1}
-            />
-          );
-        })
-      }
-    </HorizontalScrollContainer>
   </div>
-  <HorizontalScrollContainer title="Tendencias">
+  <HorizontalScrollContainer title="Categorias" addTitleSpacing>
+    {
+      categories.map((category, index) => {
+        return (
+          <CategorySectionContainer
+            {...category}
+            isFirst={index === 0}
+            isLast={index === categories.length - 1}
+          />
+        );
+      })
+    }
+  </HorizontalScrollContainer>
+  <HorizontalScrollContainer title="Tendencias" addTitleSpacing>
+    {
+      products.map((category, index) => {
+        return (
+          <PreviewProductItem
+            {...category}
+            isFirst={index === 0}
+            isLast={index === categories.length - 1}
+          />
+        );
+      })
+    }
+  </HorizontalScrollContainer>
+  <HorizontalScrollContainer title="Tendencias" addTitleSpacing>
+    {
+      products.map((category, index) => {
+        return (
+          <PreviewProductItem
+            {...category}
+            isFirst={index === 0}
+            isLast={index === categories.length - 1}
+          />
+        );
+      })
+    }
+  </HorizontalScrollContainer>
+  <HorizontalScrollContainer title="Tendencias" addTitleSpacing>
     {
       products.map((category, index) => {
         return (
@@ -135,20 +158,3 @@ const products = [
     }
   </HorizontalScrollContainer>
 </MainLayoutContainer>
-<HorizontalScrollContainer title="Tendencias">
-  {
-    products.map((category, index) => {
-      return (
-        <PreviewProductItem
-          {...category}
-          isFirst={index === 0}
-          isLast={index === categories.length - 1}
-        />
-      );
-    })
-  }
-</HorizontalScrollContainer>
-
-<div slot="footer">
-  <Footer />
-</div>

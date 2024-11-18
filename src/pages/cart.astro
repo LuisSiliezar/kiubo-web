@@ -1,0 +1,106 @@
+---
+import MainLayoutContainer from "../layouts/MainLayoutContainer.astro";
+import HorizontalScrollContainer from "/components/commons/HorizontalScrollContainer.astro";
+import ShoppingCartProductItem from "/components/products/ShoppingCartProductItem.astro";
+import CategorySectionContainer from "/components/commons/CategorySectionContainer.astro";
+import PreviewProductItem from "/components/products/PreviewProductItem.astro";
+
+// TODO: delete this
+const products = [
+  {
+    category: "Zapatos casuales de mujer",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3bbecbdf584e40398446a8bf0117cf62_9366/Samba_OG_Shoes_White_B75806_01_00_standard.jpg",
+  },
+  {
+    category: "Zapatos casuales de hombre",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/94ddbca2c2034277b6bbb9b1d5fa04ce_9366/Samba_OG_Shoes_Brown_IE6523_02_standard_hover.jpg",
+  },
+  {
+    category: "Zapatos deportivos para hombre",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f39b8a8d62f1477ab95c134871390023_9366/ULTRABOOST_1.0_SHOES_Black_JH6583_01_standard.jpg",
+  },
+  {
+    category: "70s Short Full Zip Fleece Hoodie",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4d0801fc7b2640fba5aeefcfa4a5f403_9366/70s_Short_Full_Zip_Fleece_Hoodie_Pink_JN7665_21_model.jpg",
+  },
+  {
+    category: "Electric Zubaz American Football Cleats",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/05bf6643752f40db8d39ce42e3d43b25_9366/Adizero_Electric_Zubaz_American_Football_Cleats_Black_IF3994_01_standard.jpg",
+  },
+  {
+    category: "Steel Metal Bottle 2L",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/82eca63dacbe406e8f19ad98001381e8_9366/Steel_Metal_Bottle_2L_White_EX7305_01_standard.jpg",
+  },
+  {
+    category: "Football Jersey",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/019865e338ec43038b52dd807cdd91cc_9366/Miami_Football_Jersey_White_JJ0410_23_hover_model.jpg",
+  },
+  {
+    category: "70s Short Full Zip Fleece Hoodie",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4d0801fc7b2640fba5aeefcfa4a5f403_9366/70s_Short_Full_Zip_Fleece_Hoodie_Pink_JN7665_21_model.jpg",
+  },
+  {
+    category: "Electric Zubaz American Football Cleats",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/05bf6643752f40db8d39ce42e3d43b25_9366/Adizero_Electric_Zubaz_American_Football_Cleats_Black_IF3994_01_standard.jpg",
+  },
+  {
+    category: "Steel Metal Bottle 2L",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/82eca63dacbe406e8f19ad98001381e8_9366/Steel_Metal_Bottle_2L_White_EX7305_01_standard.jpg",
+  },
+  {
+    category: "Football Jersey",
+    url: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/019865e338ec43038b52dd807cdd91cc_9366/Miami_Football_Jersey_White_JJ0410_23_hover_model.jpg",
+  },
+];
+---
+
+<MainLayoutContainer>
+  <div class="min-h-screen">
+    <!-- Titles -->
+    <div class="text-start justify-start px-4 mt-6 mb-4">
+      <h1 class="text-2xl font-bold pb-2">My carrito</h1>
+      <h4>
+        Total: ({products.length} products) <span class="font-bold">$0,00</span>
+      </h4>
+      <h6 class="pb-4">Los elementos en tu carrito no estan reservados*</h6>
+    </div>
+    <!-- Product List -->
+    <div class="px-4">
+      {
+        products.map((product, index) => {
+          return (
+            <ShoppingCartProductItem
+              product={product.category}
+              url={product.url}
+            />
+          );
+        })
+      }
+      <!-- Order summary -->
+      <div class="px-2 py-4">
+        <h1 class="font-bold uppercase">Resumen del pedido</h1>
+        <h1>Resumen del pedido</h1>
+        <h1>Resumen del pedido</h1>
+        <h1>Resumen del pedido</h1>
+        <h1>Resumen del pedido</h1>
+      </div>
+      <!-- Checkout options -->
+      <!-- Related products -->
+      <HorizontalScrollContainer title="Productos relacionados" class="mt-4">
+        {
+          products.map((category, index) => {
+            return (
+              <PreviewProductItem
+                {...category}
+                isLast={index === products.length - 1}
+              />
+            );
+          })
+        }
+      </HorizontalScrollContainer>
+      <!-- Accepted payment methods -->
+    </div>
+  </div>
+
+  <style></style>
+</MainLayoutContainer>
