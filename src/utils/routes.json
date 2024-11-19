@@ -1,4 +1,6 @@
 {
     "home": "/",
-    "cart": "/cart"
+    "cart": "/cart",
+    "login": "/login",
+    "register": "/register"
 }
