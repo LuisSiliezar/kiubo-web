@@ -1,6 +1,5 @@
 ---
 import routes from "/utils/routes.json";
-console.log(routes);
 ---
 
 <nav
@@ -179,33 +178,63 @@ console.log(routes);
   </div>
   <!-- !MENU SIDEBAR -->
   <div
-    onclick="exitMenuNav()"
     id="sideMenuBar"
-    class="fixed top-0 left-0 bg-transparent w-0 h-full overflow-x-hidden duration-500 z-10"
+    class="fixed top-0 left-0 bg-white w-0 h-full overflow-x-hidden duration-500 z-10"
   >
-    <span style="color:black; cursor:pointer;">click menu</span>
     <div
       id="sideMenuNav"
-      class="fixed top-0 left-0 bg-white text-black w-0 h-full flex justify-center items-center overflow-x-hidden duration-500 font-bold z-50"
+      class="fixed top-0 left-0 text-black w-0 h-full justify-center items-center overflow-x-hidden duration-500 font-bold z-50"
     >
       <!-- TODO: Delete menu icon -->
-      <span class="flex justify-between items-center" onclick="exitMenuNav()">
-        <a
-          href="javascript:void(0)"
-          class="text-sm absolute top-0 right-0 mr-3 mt-2"
-          ><div>
-            <span>close</span>
-            <span class="text-white">x</span>
-          </div></a
-        >
-      </span>
-
-      <!--menu links-->
-      <ul class="text-2xl">
-        <li class="p-2"><a href="#">House options</a></li>
-        <li class="p-2"><a href="#">Information</a></li>
-        <li class="p-2"><a href="#">Settings</a></li>
-      </ul>
+      <div class="flex justify-between items-center pt-4">
+        <span class="text-black ml-2" onclick="exitMenuNav()">
+          <!---! delete icon ---->
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <mask
+              id="mask0_1_2235"
+              style="mask-type:alpha"
+              maskUnits="userSpaceOnUse"
+              x="4"
+              y="4"
+              width="24"
+              height="24"
+            >
+              <rect x="4" y="4" width="24" height="24" fill="#D9D9D9"></rect>
+            </mask>
+            <g mask="url(#mask0_1_2235)">
+              <path
+                d="M16 17.4L11.1 22.3C10.9167 22.4833 10.6833 22.575 10.4 22.575C10.1167 22.575 9.88332 22.4833 9.69999 22.3C9.51665 22.1167 9.42499 21.8833 9.42499 21.6C9.42499 21.3167 9.51665 21.0833 9.69999 20.9L14.6 16L9.69999 11.1C9.51665 10.9167 9.42499 10.6833 9.42499 10.4C9.42499 10.1167 9.51665 9.88332 9.69999 9.69999C9.88332 9.51665 10.1167 9.42499 10.4 9.42499C10.6833 9.42499 10.9167 9.51665 11.1 9.69999L16 14.6L20.9 9.69999C21.0833 9.51665 21.3167 9.42499 21.6 9.42499C21.8833 9.42499 22.1167 9.51665 22.3 9.69999C22.4833 9.88332 22.575 10.1167 22.575 10.4C22.575 10.6833 22.4833 10.9167 22.3 11.1L17.4 16L22.3 20.9C22.4833 21.0833 22.575 21.3167 22.575 21.6C22.575 21.8833 22.4833 22.1167 22.3 22.3C22.1167 22.4833 21.8833 22.575 21.6 22.575C21.3167 22.575 21.0833 22.4833 20.9 22.3L16 17.4Z"
+                fill="#1C1B1F"></path>
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div class="mt-6 px-4">
+        <!--menu links-->
+        <ul class="text-xl uppercase font-bold">
+          <li class="p-2"><a href="#">Mujer</a></li>
+          <li class="p-2"><a href="#">Hombre</a></li>
+          <li class="p-2"><a href="#">Niños</a></li>
+          <li class="p-2"><a href="#">Accesorios</a></li>
+          <li class="p-2"><a href="#">Nuevo</a></li>
+          <li class="p-2"><a href="#">En descuento</a></li>
+        </ul>
+      </div>
+      <div class="mt-6 px-4">
+        <hr class="border-gray-300 pt-4" />
+        <!--menu links-->
+        <ul class="text-normal font-normal">
+          <li class="p-2"><a href={routes.login}>Login</a></li>
+          <li class="p-2"><a href={routes.register}>Register</a></li>
+          <li class="p-2"><a href="#">Soporte al cliente</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </nav>
